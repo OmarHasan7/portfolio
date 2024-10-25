@@ -1,24 +1,29 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div class="">
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo inline" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla inline" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+
+
+let tabs = document.querySelectorAll('.aboutme-btn');
+tabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    if(window.innerWidth < 710) {
+      tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center"});
+    }
+
+    let oldActive = document.querySelector('.btn-border-buttom');
+    if(oldActive) {
+      oldActive.classList.remove('btn-border-buttom');
+    }
+
+    if(!tab.querySelector('#resume-btn')) {
+      tab.classList.add('btn-border-buttom');
+    }
+    
+    let displayDiv = document.querySelector('#aboutme-info');
+    for(let i =0; i < displayDiv.children.length; i++) {
+      displayDiv.children[i].style.display = 'none';
+    }
+    let info = document.querySelector(tab.getAttribute('data-target'));
+    info.style.display = 'block';
+  });
+});

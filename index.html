@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/porfolio.svg" />
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/main.js" type="module"></script>
     <title>Portfolio</title>
   </head>
   <body>
@@ -1172,7 +1173,7 @@
           <h6>Freelance</h6>
           <h1>Personal finance notebook</h1>
         </div>
-        <div class="img"></div>
+        <div class="img overlay img-right-center" style="background-image: url('/public/pfa_project2.png')"></div>
         <div class="description-tags-wrapper">
           <div class="project-description">
             <p>A web app for organizing daily finances, generating reports, and providing receipts.</p>
@@ -1189,27 +1190,112 @@
           </ul>
         </div>
       </div>
-      <div class="grid hidden">
-          <div class="project-title">
-            <h6></h6>
-            <h1></h1>
-          </div>
-          <div class="img"></div>
+      <div id="project" class="rtl">
+        <div class="project-title">
+          <h6>Personal</h6>
+          <h1>Scheduler and task manger</h1>
+        </div>
+        <div class="img lighter-overlay img-left-center" style="background-image: url('/public/portfolio-pic.png');border-radius: 22px;"></div>
+        <div class="description-tags-wrapper">
           <div class="project-description">
-            <p></p>
-            <h3></h3>
-            <p></p>
+            <p>A single page app containing a calender for scheduling events & a task manager. </p>
+            <h3>Project Highlight Feature:</h3>
+            <p>Summary page which display to the user his upcoming events & Todo tasks, weather and a daily quote.</p>
           </div>
           <ul class="tags">
-            <li class="tag"></li>
-            <li class="tag"></li>
-            <li class="tag"></li>
-            <li class="tag"></li>
-            <li class="tag"></li>
-            <li class="tag"></li>
+            <li class="tag">PHP Blade</li>
+            <li class="tag">CSS</li>
+            <li class="tag">JS</li>
+            <li class="tag">Laravel</li>
+            <li class="tag">mysql</li>
+            <li class="tag">AWS</li>
           </ul>
+        </div>
       </div>
-      <div class="grid grid-cols-2"></div>
+      <div id="project" class="">
+        <div class="project-title">
+          <h6>Personal</h6>
+          <h1>Art Work Gallery</h1>
+        </div>
+        <div class="img overlay img-right-center"></div>
+        <div class="description-tags-wrapper">
+          <div class="project-description">
+            <p>A gallery website for showing hand made paintings and poetry pieces.</p>
+            <h3>Project Highlight Feature:</h3>
+            <p>Landing page with a unique card design with a sleek little animation.</p>
+          </div>
+          <ul class="tags">
+            <li class="tag">PHP Blade</li>
+            <li class="tag">CSS</li>
+            <li class="tag">JS</li>
+            <li class="tag">Laravel</li>
+            <li class="tag">mysql</li>
+            <li class="tag">AWS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="aboutme-section">
+      <ul id="aboutme-buttons">
+        <li class="aboutme-btn" data-target="#aboutme-paragraph">
+          <button class="aboutme-button btn-border-buttom">About me</button>
+        </li>
+        <li class="aboutme-btn" data-target="#education">
+          <button class="aboutme-button">Education</button>
+        </li>
+        <li class="aboutme-btn" data-target="#techstack">
+          <button class="aboutme-button">Tech Stack</button>
+        </li>
+        <li class="aboutme-btn" data-target="#resume">
+          <button id="resume-btn">Resume</button>
+        </li>
+      </ul>
+      <div id="aboutme-info">
+        <div id="aboutme-paragraph">
+          <p class="ab-paragraph margin-bottom">Hello, my name is Omar Hassan Al-Imam, a Sudanese national. I enjoy making web systems and applications. I am proficient in working with the full stack.
+          </p>
+          <p class="ab-paragraph">Continuous learning and adaptation are core principles of mine. Its important to stay updated and keep up with the rapid advancements in programming and to leverage new tools.
+          </p>
+        </div>
+        <div id="education">
+          <h2>University</h2>
+          <p>Umm Al Qura University</p>
+          <p>Computer Science Diploma degree</p>
+          <h2>Certificates</h2>
+          <p>MS Azure Fundementals</p>
+          <p>SQl (Standford Uni course)</p>
+          <p>CS50W (Harverd Uni course)</p>
+        </div>
+        <div id="techstack">
+          <ul class="ts-ul">
+            <li class="ts-li">
+              <h5>Languages:</h5>
+              <p>JavaScript, php, python</p>
+            </li>
+            <li class="ts-li">
+              <h5>Frontend:</h5>
+              <p>HTML, JS, CSS(vanilla, sass, tailwind...etc)</p>
+            </li>
+            <li class="ts-li">
+              <h5>Backend:</h5>
+              <p>Laravel, django, flask</p>
+            </li>
+            <li class="ts-li">
+              <h5>Databases:</h5>
+              <p>(mysql, postgres, sqlite)</p>
+            </li>
+            <li class="ts-li">
+              <h5>Version Control:</h5>
+              <p>GIT</p>
+            </li>
+            <li class="ts-li">
+              <h5>UI/UX Design:</h5>
+              <p>Figma</p>
+            </li>
+          </ul>
+        </div>
+        <div id="resume"></div>
+      </div>
     </div>
   </body>
 </html>
