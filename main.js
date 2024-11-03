@@ -1,5 +1,5 @@
-import './style.css'
-
+import './style.css';
+import throttle from 'lodash.throttle';
 
 
 
@@ -27,3 +27,69 @@ tabs.forEach((tab) => {
     info.style.display = 'block';
   });
 });
+
+//hamburger btn
+let burgerBtn = document.querySelector('.burger-btn');
+burgerBtn.addEventListener('click', () => {
+  burgerBtn.classList.toggle('active');
+  let nav = document.querySelector('.nav');
+  nav.classList.toggle('nav-active');
+});
+
+
+//Hide-Show navbar onscroll
+// window.onscroll = function() {
+//   throttledFunction();
+// };
+
+// function throttle(callback, wait, immediate = false) {
+//   let timeout = null 
+//   let initialCall = true
+  
+//   return function() {
+//     const callNow = immediate && initialCall
+//     const next = () => {
+//       callback.apply(this, arguments)
+//       timeout = null
+//     }
+    
+//     if (callNow) { 
+//       initialCall = false
+//       next()
+//     }
+
+//     if (!timeout) {
+//       timeout = setTimeout(next, wait)
+//     }
+//   }
+// }
+
+let lastScrollTop = 0;
+function getScrollDirection() {
+    let direction = null;
+    let st = window.pageYOffset;
+    let nav = document.querySelector('nav');
+    if (st < lastScrollTop){
+      // Scrolling up
+      nav.classList.add('fixed-nav');      
+      console.log('User scrolling up');
+    } else {
+      // Scrolling down
+      nav.classList.remove('fixed-nav');
+      console.log('User scrolling down');
+    }
+
+    lastScrollTop = st;
+    // return direction;
+}
+
+let throttledFunction = throttle(getScrollDirection, 200, {'leading': false});
+window.addEventListener('scroll', throttledFunction);
+
+
+// let heroBtn = document.querySelector('#hero-btn');
+// heroBtn.addEventListener('click', () => {
+//   let nav = document.querySelector('nav');
+//   nav.classList.remove('fixed-nav');
+//   lastScrollTop = 0;
+// });
