@@ -93,3 +93,20 @@ window.addEventListener('scroll', throttledFunction);
 //   nav.classList.remove('fixed-nav');
 //   lastScrollTop = 0;
 // });
+
+// light/dark switch
+let switcher = document.querySelector('#theme-switch');
+switcher.addEventListener('click', () => {
+  if(switcher.getAttribute('data-mode') === 'light') {
+    document.body.classList.add('dark-theme');
+    document.querySelector('#moon-icon').style.display = 'none';
+    document.querySelector('#sun-icon').style.display = 'inline';
+    switcher.setAttribute('data-mode', 'dark');
+  }
+  else if(switcher.getAttribute('data-mode') === 'dark') {
+    document.body.classList.remove('dark-theme');
+    document.querySelector('#sun-icon').style.display = 'none';
+    document.querySelector('#moon-icon').style.display = 'inline';
+    switcher.setAttribute('data-mode', 'light');
+  }
+});

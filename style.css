@@ -19,8 +19,8 @@
   --saturated-gradient-clr: #fff8e8;
 
   --nav-txt-clr: rgba(0, 0, 0, 0.6);
-  --icon-fill-clr: white;
-  --lang-btn-clr: #000;
+  --icon-fill-clr: #1F1F1F;
+  --lang-btn-clr: #1F1F1F;
   --lang-btn-txt: #fff;
   --hero-txt: black;
   --icons-border-clr: rgb(51 65 85);
@@ -29,9 +29,19 @@
   --aboutme-txt: #1D1C1C;
   --resumelink-background: #fff;
 
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pale-gradient-clr: #CA8900;
+    --saturated-gradient-clr: #644400;  
+  }
+}
+
+.dark-theme {
   --pale-gradient-clr: #CA8900;
   --saturated-gradient-clr: #644400;
   --nav-txt-clr: #fff;
+  --icon-fill-clr: white;
   --lang-btn-clr: #fff;
   --lang-btn-txt: #644400;
   --hero-txt: #fff;
@@ -40,12 +50,6 @@
   --description-background-clr: #312C2C;
   --aboutme-txt: #fff;
   --resumelink-background: #000;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --pale-gradient-clr: #CA8900;
-    --saturated-gradient-clr: #644400;  
-  }
 }
 
 
@@ -773,3 +777,18 @@ body {
     background-color: #f9f9f9;
   }
 } */
+
+/* Animation */
+#sun-icon {
+  opacity: 0;
+  transform: translateY(50%);
+  animation: fadein 0.5s ease forwards;
+}
+@keyframes fadein {
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* end */
