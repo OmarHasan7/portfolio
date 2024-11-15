@@ -18,6 +18,12 @@
   --pale-gradient-clr: #dad1c1;
   --saturated-gradient-clr: #fff8e8;
 
+  --burger-nav-pale-gradient: rgba(255, 248, 232, 0.6);
+  --burger-nav-saturated-gradient: rgba(218, 209, 193, 0.6);
+  --slide-nav-pale-gradient: rgba(255, 248, 232, 1);
+  --slide-nav-saturated-gradient: rgba(218, 209, 193, 1);
+  --buger-btn-clr: #644400;
+
   --nav-txt-clr: rgba(0, 0, 0, 0.6);
   --icon-fill-clr: #1F1F1F;
   --lang-btn-clr: #1F1F1F;
@@ -28,7 +34,6 @@
   --description-background-clr: #fff;
   --aboutme-txt: #1D1C1C;
   --resumelink-background: #fff;
-
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -40,6 +45,12 @@
 .dark-theme {
   --pale-gradient-clr: #CA8900;
   --saturated-gradient-clr: #644400;
+  --burger-nav-pale-gradient: rgba(202, 137, 0, 1);
+  --burger-nav-saturated-gradient: rgba(100, 68, 0, 1);
+  --slide-nav-pale-gradient: rgba(202, 137, 0, 1);
+  --slide-nav-saturated-gradient: rgba(100, 68, 0, 1);
+  --buger-btn-clr: #fff;
+
   --nav-txt-clr: #fff;
   --icon-fill-clr: white;
   --lang-btn-clr: #fff;
@@ -52,6 +63,9 @@
   --resumelink-background: #000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   position: relative;
@@ -64,7 +78,7 @@ body {
 }
 .nav {
   position: absolute;
-  top: 2.75rem;
+  top: 2.2rem;
   width: 100%;
   padding-block: 1rem;
   justify-content: center;
@@ -73,6 +87,9 @@ body {
   font-size: 1rem;
   font-weight: bold;
   z-index: 100;
+}
+.nav-ar {
+  background: linear-gradient(to left, var(--saturated-gradient-clr), var(--pale-gradient-clr));
 }
 .fixed-nav {
   position: fixed;
@@ -98,7 +115,7 @@ body {
 }
 .burger-btn .burger-line {
   position: absolute;
-  background: #644400;
+  background: var(--buger-btn-clr);
   display: inline-block;
   border-radius: 3px;
   left: 13px;
@@ -153,19 +170,46 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+#hero-text {
+  transform: translateY(50px);
+  opacity: 0;
+}
+#icons-board {
+  transform: translateY(50px);
+  opacity: 0;
+}
 #icon-board {
-  grid-template-columns: auto
+  grid-template-columns: auto;
+  transform: translateY(50px);
+  opacity: 0;
 }
 .board-block {
+  position: relative;
+  transform-style: preserve-3d;
   @apply w-20 h-20 border-[4.2px];
   border-color: var(--icons-border-clr);
   padding: 0;
   box-shadow: 0 5.6px 5.6px 0 rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.2s ease 0.43s;
+}
+.flip-block {
+  animation: flip-horizontal-bottom 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  box-shadow: 0 -5.6px 5.6px 0 rgba(0, 0, 0, 0.25);
 }
 .icon-shadow {
   filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.25));
 }
+.backcard {
+  transform: rotateX(180deg);
+}
+.unused {
+  visibility: hidden;
+}
 #php-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background-color: #777BB3;
 }
 .board-block > div {
@@ -179,47 +223,96 @@ body {
   background-color: var(--icons-background-clr);
 }
 /* svg icons */
+#python {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #python svg {
   margin: 0.5rem;
 }
 #laravel {
   background-color: #232323;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 #laravel svg {
   margin: 0.5rem;
 }
-
+#docker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #docker svg {
   margin: 0rem;
 }
-
+#apache {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #apache svg {
   margin: 0rem;
 }
-
+#flask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #flask svg {
   margin: 0.5rem 0.9rem;
 }
-
+#figma {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #figma svg {
   margin: 0.8rem 1.2rem;
 }
 
 #bash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background-color: #242938;
 }
 #bash svg {
   margin:;
 }
-
+#html {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+}
 #html svg {
   margin: 0.5rem;
 }
-
+#css {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #css svg {
   margin: 0.5rem;
 }
 #django {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background-color: #092E20;
 
   svg {
@@ -227,41 +320,95 @@ body {
   }
 }
 #aws {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background-color: #242938;
   
   svg {
     margin: 1rem 0.3rem;
   }
 }
+#azure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #azure svg {
   margin: 0.5rem;
 }
-
+#sass {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #sass svg {
   margin: 1rem 0.5rem;
 }
-
+#c {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #c svg {
   margin: 0.5rem;
+}
+#postcss {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 #postcss svg {
   margin: auto 0.25rem;
 }
 #wordpress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background-color: #0073AA;
 
   svg {
     margin: 0.7rem;
   }
 }
+#linux {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #linux svg {
   margin: 0.5rem;
+}
+#composer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 #composer svg {
   margin: 0.1rem;
 }
+#npm {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #npm svg {
   margin: 1.5rem 0.2rem;
+}
+#netlify {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 #netlify {
   background-color: #242938;
@@ -270,19 +417,47 @@ body {
     margin: 0.3rem 0.1rem;
   }
 }
+#ubuntu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #ubuntu svg {
   margin: 0.3rem;
+}
+#alpine {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 #alpine svg {
   margin: 1.9rem 0rem;
 }
+#framer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 #framer svg {
   margin: 1.65rem 0.2rem;
+}
+#vscode {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 #vscode svg {
   margin: 0.6rem;
 }
 #react {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background-color: #242938;
 }
 /* end */
@@ -297,6 +472,12 @@ body {
 }
 .logo.vanilla:hover {
   filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+#js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 #js-icon {
   height: 100%;
@@ -320,7 +501,8 @@ body {
 #project {
   display: grid;
   width: min(90%, 1140px);
-  min-height: 48rem;
+  min-height: fit-content;
+  margin-bottom: 16.125rem;
   margin-inline: auto;
   /* grid-template-columns: repeat(auto, 10%); */
   grid-auto-columns: min(10%, 7.5rem);
@@ -329,6 +511,8 @@ body {
 
 #projects-title {
   margin-bottom: 6.25rem;
+  opacity: 0;
+  transform: translateY(-50px);
 }
 .project-title {
   order: 1;
@@ -337,9 +521,13 @@ body {
   align-self: center;
   padding-left: 0.8rem;
   z-index: 10;
+  opacity: 0;
+  transform: translateY(-50px);
 }
 .img {
   order: 2;
+  opacity: 0;
+  transform: translateY(-50px);
 }
 .project-description {
 }
@@ -366,6 +554,8 @@ body {
   grid-column: 1 / 8;
   grid-row: 3 / 6;
   z-index: 10;
+  opacity: 0;
+  transform: translateY(-50px);
 }
 .project-description {
   display: flex;
@@ -380,7 +570,7 @@ body {
 
   p {
     margin-inline: auto;
-    max-width: 70ch;
+    width: min(70ch, 100%);
     font-size: 1rem;
   }
   h3 {
@@ -452,10 +642,12 @@ body {
 #aboutme-section {
   display: flex;
   width: min(85%, 50rem);
-  min-height: 37.5;
+  /* min-height: 37.5rem; */
   margin-inline: auto;
-  margin-bottom: 10rem;
-  padding-bottom: 5rem;
+  margin-top: -3rem;
+  margin-bottom: 15rem;
+  padding-top: 4rem;
+  /* padding-bottom: 5rem; */
   gap: 8rem;
   align-content: center;
 }
@@ -463,16 +655,21 @@ body {
   min-height: 30rem;
   flex-grow: 1;
   display: grid;
+  opacity: 0;
+  transform: translateY(50px);
 }
 #aboutme-buttons {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
+  opacity: 0;
+  transform: translateY(50px);
 }
 #education, #techstack, #resume {
   display: none;
 }
 .aboutme-button {
+  min-width: max-content;
   width: 7rem;
   font-size: 1.5rem;
   font-weight: bold;
@@ -481,9 +678,10 @@ body {
 .btn-border-buttom {
   border-bottom: 3px;
   border-style: solid;
-  border-image: linear-gradient(to right, #644400 20%, #CA8900 50%) 30 fill;
+  border-image: linear-gradient(to right, #644400 20%, #CA8900 50%) 40 fill;
 }
 #resume-btn {
+  width: max-content;
   margin-inline: auto;
   padding: 0.5rem 1.563rem;
   background: linear-gradient(140deg, #644400 40%, #CA8900);
@@ -512,6 +710,8 @@ body {
   height: 24rem;
   margin-block: auto;
   margin-inline: 15%;
+  opacity: 0;
+  transform: translate(-50px);
 }
 #education h2 {
   margin-bottom: 1.5rem;
@@ -585,30 +785,53 @@ body {
   width: max-content;
   margin-inline: auto;
   margin-bottom: 4.5rem;
+  transform: translateZ(-80px);
+  opacity: 0;
 }
 .contacts {
   width: 19rem;
   margin-inline: auto;
 }
-.contacts > h3 {
+.c-title {
   margin-block: 1.7rem 0.9rem;
   width: max-content;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--aboutme--txt);
+  transform: rotateX(-100deg);
+  transform-origin: top;
+  opacity: 0;
 }
 .contact {
   display: inline-block;
   width: 14rem;
   margin-left: min(5rem, 10%);
   font-size: 1rem;
+  transform: rotateX(-100deg);
+  transform-origin: top;
+  opacity: 0;
 }
 .copy-link-btn {
   background: linear-gradient(140deg, #644400 40%, #CA8900);
   color: white;
   font-size: 0.875rem;
-  padding: 0.2rem 0.4rem;
+  padding: 0.35rem 0.45rem;
+  line-height: normal;
   border-radius: 0.65rem;
+  transform: rotateX(-100deg);
+  transform-origin: top;
+  opacity: 0;
+}
+/* end */
+/* footer */
+footer {
+  width: max(50%, 11rem);
+  margin-inline: auto;
+  padding-block: 0.25rem;
+  border-top: #6444008f 2px solid;
+  text-align: center;
+  color: #644400;
+  font-size: 0.85rem;
 }
 /* end */
 /* Media Queries */
@@ -629,7 +852,7 @@ body {
     aspect-ratio: 1 / 1;
     transform-origin: center;
     margin-inline: unset;
-    background: linear-gradient(to right, rgba(255, 248, 232, 0.6), rgba(218, 209, 193, 0.6));
+    background: linear-gradient(to right, var(--burger-nav-pale-gradient), var(--burger-nav-saturated-gradient));
     border-right: none;
     border-radius: 50%;
     overflow: hidden;
@@ -641,6 +864,9 @@ body {
     padding-left: 16.2rem;
     box-shadow: 0px 11.17px 11.17px 0px rgba(0,0,0, 0.05);
     transition: all .4s;
+  }
+  #lang-switch {
+    width: max-content;
   }
   .burger-btn {
     display: block;
@@ -760,8 +986,8 @@ body {
 .nav-active {
   width: 52.375rem;
   padding-top: 29rem;
-  background: linear-gradient(to right, rgba(255, 248, 232, 1), rgba(218, 209, 193, 1));
-
+  background: linear-gradient(to right, var(--slide-nav-pale-gradient), var(--slide-nav-saturated-gradient));
+  direction: ltr; 
   box-shadow: 0px 11.17px 11.17px 0px rgba(0,0,0, 0.35);
 }
 /* end */
@@ -779,16 +1005,225 @@ body {
 } */
 
 /* Animation */
-#sun-icon {
+#sun-icon, #moon-icon path {
   opacity: 0;
-  transform: translateY(50%);
-  animation: fadein 0.5s ease forwards;
+  transform: translateY(40%);
+  animation: fadein 0.5s forwards;
 }
+#moon-icon path {
+  animation-delay: calc(0.2s * var(--order));
+}
+#beam {
+  opacity: 0;
+  height: 0px;
+  animation: popin 0.4s ease-in forwards;
+  animation-delay: calc(0.1s * var(--order));
+}
+
 @keyframes fadein {
   100% {
     opacity: 1;
     transform: translateY(0%);
   }
 }
+@keyframes popin {
+  100% {
+    opacity: 1;
+    height: 4px;
+  }
+}
+/* end */
+/* Animista */
+/* ----------------------------------------------
+ * Generated by Animista on 2024-11-7
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+.fade-in-top {
+	animation: fade-in-top cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.fade-in-bottom {
+	animation: fade-in-bottom cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.fade-in-fwd {
+	animation: fade-in-fwd 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.rotate-in-2-tl-cw {
+	animation: rotate-in-2-tl-cw cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.rotate-in-2-ccw {
+	animation: rotate-in-2-ccw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.rotate-in-2-cw {
+	animation: rotate-in-2-cw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.swing-in-top-fwd {
+	animation: swing-in-top-fwd 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.flip-horizontal-bottom {
+	animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+.a-delay-02 {
+  animation-delay: 0.2s;
+}
+.a-delay-03 {
+  animation-delay: 0.3s;
+}
+.a-delay-05 {
+  animation-delay: 0.5s;
+}
+.a-delay-1 {
+  animation-delay: 1s;
+}
+.a-delay-contacts {
+  animation-delay: calc(0.5s * var(--order));
+}
+.a-duration-05 {
+  animation-duration: 0.5s;
+}
+.a-duration-06 {
+  animation-duration: 0.6s;
+}
+.a-duration-08 {
+  animation-duration: 0.8s;
+}
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-fwd {
+  0% {
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-2-tl-cw {
+  0% {
+    transform: rotate(-30deg);
+    transform-origin: 0 0;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-2-ccw {
+  0% {
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-2-cw {
+  0% {
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
 
 /* end */
+
+/* custom alert */
+#toast {
+  visibility: hidden;
+  height: 50px;
+  width: fit-content;
+  margin: auto;
+  background-color: #CA8900;
+  color: #232323;
+  text-align: center;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 30px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+#toast #desc {
+  color: #fff;
+  padding: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#toast.show {
+  visibility: visible;
+  animation: fadein2 1s, fadeout 1s 3s;
+}
+
+@keyframes fadein2 {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/porfolio.svg" />
@@ -8,7 +8,7 @@
     <script src="/main.js" defer type="module"></script>
     <title>Portfolio</title>
   </head>
-  <body>
+  <body style="  background: linear-gradient(to left, var(--saturated-gradient-clr), var(--pale-gradient-clr));">
     <div class="burger-btn">
       <div class="openbtn-area">
         <span class="burger-line"></span>
@@ -16,16 +16,16 @@
         <span class="burger-line"></span>
       </div>
     </div>
-    <nav class="nav flex items-center gap-[100px] w-fit mx-auto">
+    <nav class="nav nav-ar flex items-center gap-[100px] w-fit mx-auto">
       <a href="#hero" id="hero-btn">
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="nav-icon-fill" d="M22.9167 22.9166V10.4166L12.5 2.08331L2.08337 10.4166V22.9166H8.33337V13.5416H16.6667V22.9166H22.9167Z" fill="#1F1F1F" stroke="#1F1F1F" stroke-width="2.08333" stroke-linejoin="round"/>
           <path class="nav-icon-fill" d="M12.5 22.9166V17.7083" stroke="#1F1F1F" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-      <a href="#projects" class="middle-anchors">Projects</a>
-      <a href="#aboutme-section" class="middle-anchors">About</a>
-      <a href="#contactme-section" class="middle-anchors">Contact</a>
+      <a href="#projects"  class="middle-anchors">المشاريع</a>
+      <a href="#aboutme-section"  class="middle-anchors" style="margin-left: -2rem">معلومات عني</a>
+      <a href="#contactme-section"  class="middle-anchors">التواصل</a>
       <div id="extra-btns" class="flex gap-7 ml-[75px]">
         <button id="theme-switch" title="switch theme" data-mode="light" aria-label="switch to dark theme">
           <svg id="moon-icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,17 +44,17 @@
             <rect id="beam" style="--order: 8" x="22" y="23.4142" width="2" height="4" rx="1" transform="rotate(-45 22 23.4142)" fill="white"/>
           </svg>            
         </button>
-        <a dir="rtl" id="lang-switch" href="/index-ar.html" class="w-[20px] transition-all hover:w-10 overflow-x-hidden px-[6px]i rounded-md "><span class="mx-[0.15rem]">عربي</span></a>
+        <a dir="ltr" id="lang-switch" href="/" class="w-[20px] transition-all hover:w-14 overflow-x-hidden  px-[6px]i rounded-md "><span class="mx-[0.15rem]">English</span></a>
       </div>
     </nav>
     <div id="hero" class="flex items-center">
       <div id="hero-text" class="inline-block">
-        <h3 class="mb-2 text-2xl font-semibold tracking-[0.2em]">Omar Hasan</h3>
+        <h3 class="mb-2 text-2xl font-semibold tracking-[0.2em]">عمر الإمام</h3>
         <h1 class="mb-6 text-[28px] max-w-96 font-normal">
-          <span class="text-4xl font-semibold">Web Developer</span> Who Also Can <span class="text-4xl font-bold">Design</span>
+          <span class="text-4xl font-semibold">مطور ومصمم برمجيات ويب</span>
         </h1>
         <p class="max-w-72 text-xl leading-9">
-          Work on the full development process from design to testing and quality insurance.
+          مبرمج Fullstack من التصميم حتى إختبارات الأداء ومراقبة الجودة
         </p>
       </div>
       <div id="icons-board" class="grid grid-cols-3 gap-[6px]">
@@ -1153,18 +1153,18 @@
       </div>
     </div>
     <div id="projects">
-      <h1 id="projects-title" class="section-title">projects</h1>
+      <h1 id="projects-title" class="section-title">المشاريع</h1>
       <div id="project" class="">
         <div id="side-ptitle" class="project-title a-delay-02">
           <h6>Freelance</h6>
-          <h1>Personal finance notebook</h1>
+          <h1>دفتر حسابات شخصي</h1>
         </div>
         <div id="side-img" class="img overlay img-center" style="background-image: url('/public/pfa_project1.webp')"></div>
         <div id="side-des" class="description-tags-wrapper a-delay-05">
           <div class="project-description">
-            <p>A web app for organizing daily finances, generating reports, and providing receipts.</p>
-            <h3>Project Highlight Feature:</h3>
-            <p>Automated PDF reports for income and expenses, including automated sums and balance calculations, providing daily, monthly, and yearly summaries.</p>
+            <p>تطبيق web لتنظيم الحسابات اليومية و اصدار التقارير والسندات .</p>
+            <h3>أهم مميزات المشروع :</h3>
+            <p>نظام تقارير الpdf يتم فيه أتمتة عرض المعلومات و حساب المجاميع و الرصيد المالي على اساس يومي, شهري أو سنوي .</p>
           </div>
           <ul class="tags">
             <li class="tag">PHP Blade</li>
@@ -1176,17 +1176,17 @@
           </ul>
         </div>
       </div>
-      <div id="project" class="rtl">
-        <div id="side-ptitle" class="project-title a-delay-02">
+      <div dir="ltr" id="project" class="">
+        <div dir="rtl" id="side-ptitle" class="project-title a-delay-02">
           <h6>Personal</h6>
-          <h1>Scheduler and task manger</h1>
+          <h1>مجدول مواعيد ومدير مهام</h1>
         </div>
         <div id="side-img" class="img lighter-overlay img-center" style="background-image: url('/public/calendar_project2.webp');border-radius: 22px;"></div>
         <div id="side-des" class="description-tags-wrapper a-delay-05">
-          <div dir="ltr" class="project-description">
-            <p>A single page app containing a calender for scheduling events & a task manager. </p>
-            <h3>Project Highlight Feature:</h3>
-            <p>Summary page which display to the user his upcoming events & Todo tasks, weather and a daily quote.</p>
+          <div dir="rtl" class="project-description">
+            <p>تطبيق single page (spa) لجدولة مواعيد و إضافة الTodo Tasks مع widgets للطقس والمقولات اليومية .</p>
+            <h3>أهم مميزات المشروع :</h3>
+            <p>صفحة الsummary: تظهر للمستخدم أهم المواعيد القادمة, المهام و الطقس و مقولات يومية .</p>
           </div>
           <ul class="tags">
             <li class="tag">PHP Blade</li>
@@ -1201,14 +1201,14 @@
       <div id="project" class="">
         <div id="side-ptitle" class="project-title a-delay-02">
           <h6>Personal</h6>
-          <h1>Art Work Gallery</h1>
+          <h1>معرض أعمال فنية</h1>
         </div>
         <div id="side-img" class="img lighter-overlay img-center" style="background-image: url('/public/art_gallary_project3.webp')"></div>
         <div id="side-des" class="description-tags-wrapper a-delay-05">
           <div class="project-description">
-            <p>A gallery website for showing hand made paintings and poetry pieces.</p>
-            <h3>Project Highlight Feature:</h3>
-            <p>Landing page with a unique card design with a sleek little animation.</p>
+            <p>تطبيق web لعرض لوحات وأعمال فخار فنية.</p>
+            <h3>أهم مميزات المشروع :</h3>
+            <p>صفحة رئيسية landing page بتصميم بطاقات وتحريك جذاب .</p>
           </div>
           <ul class="tags">
             <li class="tag">PHP Blade</li>
@@ -1224,30 +1224,30 @@
     <div id="aboutme-section">
       <ul id="aboutme-buttons" class="">
         <li class="aboutme-btn" data-target="#aboutme-paragraph">
-          <button class="aboutme-button btn-border-buttom">About me</button>
+          <button class="aboutme-button btn-border-buttom">معلومات عني</button>
         </li>
         <li class="aboutme-btn" data-target="#education">
-          <button class="aboutme-button">Education</button>
+          <button class="aboutme-button">التعليم</button>
         </li>
         <li class="aboutme-btn" data-target="#techstack">
           <button class="aboutme-button">Tech Stack</button>
         </li>
         <li class="aboutme-btn" data-target="#resume">
-          <button id="resume-btn">Resume</button>
+          <button id="resume-btn">السيرة الذاتية</button>
         </li>
       </ul>
       <div id="aboutme-info" class="a-delay-03">
-        <div id="aboutme-paragraph">
-          <p class="ab-paragraph margin-bottom">Hello, my name is Omar Hassan Al-Imam, a Sudanese national. I enjoy making web systems and applications. I am proficient in working with the full stack.
+        <div id="aboutme-paragraph" style="margin-top:3rem">
+          <p class="ab-paragraph margin-bottom">    مرحباَ اسمي عمر حسن الإمام سوداني الجنسية استمتع بالعمل على برمجة أنظمة و تطبيقات الweb . أجيد العمل على الStack كاملاَ .
           </p>
-          <p class="ab-paragraph">Continuous learning and adaptation are core principles of mine. Its important to stay updated and keep up with the rapid advancements in programming and to leverage new tools.
+          <p class="ab-paragraph">    مواصلة التعلم والتأقلم مبدأ لدي لمواكبة مستجدات البرمجة وتطورها السريع والاستفادة من الأدوات الجديدة.
           </p>
         </div>
         <div id="education">
-          <h2>University</h2>
-          <p>Umm Al Qura University</p>
-          <p>Computer Science Diploma degree</p>
-          <h2>Certificates</h2>
+          <h2>الجامعة</h2>
+          <p>جامعة أم القرى</p>
+          <p>Computer Science دبلوم</p>
+          <h2>الكورسات</h2>
           <p>MS Azure Fundementals</p>
           <p>SQl (Standford Uni course)</p>
           <p>CS50W (Harverd Uni course)</p>
@@ -1255,28 +1255,28 @@
         <div id="techstack">
           <ul class="ts-ul">
             <li class="ts-li">
-              <h5>Languages:</h5>
+              <h5>لغات البرمجة: </h5>
               <p>JavaScript, php, python</p>
             </li>
             <li class="ts-li">
-              <h5>Frontend:</h5>
+              <h5>برمجة الواجهات: </h5>
               <p>HTML, JS, CSS(vanilla, sass, tailwind...etc)</p>
             </li>
             <li class="ts-li">
-              <h5>Backend:</h5>
+              <h5>برمجة الخلفيات: </h5>
               <p>Laravel, django, flask</p>
             </li>
             <li class="ts-li">
-              <h5>Databases:</h5>
+              <h5>قواعد البيانات: </h5>
               <p>(mysql, postgres, sqlite)</p>
             </li>
             <li class="ts-li">
-              <h5>Version Control:</h5>
+              <h5>التحكم نسخ الكود</h5>
               <p>GIT</p>
             </li>
             <li class="ts-li">
-              <h5>UI/UX Design:</h5>
-              <p>Figma</p>
+              <h5>تصميم الUI/UX: </h5>
+              <p>استخدم Figma لعمل الwire frames و التصاميم .</p>
             </li>
           </ul>
         </div>
@@ -1285,28 +1285,28 @@
             <div class="gdrive-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="2rem" viewBox="0 0 256 229"><path fill="#0066da" d="m19.354 196.034l11.29 19.5c2.346 4.106 5.718 7.332 9.677 9.678q17.009-21.591 23.68-33.137q6.77-11.717 16.641-36.655q-26.604-3.502-40.32-3.502q-13.165 0-40.322 3.502c0 4.545 1.173 9.09 3.519 13.196z"/><path fill="#ea4335" d="M215.681 225.212c3.96-2.346 7.332-5.572 9.677-9.677l4.692-8.064l22.434-38.855a26.57 26.57 0 0 0 3.518-13.196q-27.315-3.502-40.247-3.502q-13.899 0-40.248 3.502q9.754 25.075 16.422 36.655q6.724 11.683 23.752 33.137"/><path fill="#00832d" d="M128.001 73.311q19.68-23.768 27.125-36.655q5.996-10.377 13.196-33.137C164.363 1.173 159.818 0 155.126 0h-54.25C96.184 0 91.64 1.32 87.68 3.519q9.16 26.103 15.544 37.154q7.056 12.213 24.777 32.638"/><path fill="#2684fc" d="M175.36 155.42H80.642l-40.32 69.792c3.958 2.346 8.503 3.519 13.195 3.519h148.968c4.692 0 9.238-1.32 13.196-3.52z"/><path fill="#00ac47" d="M128.001 73.311L87.681 3.52c-3.96 2.346-7.332 5.571-9.678 9.677L3.519 142.224A26.57 26.57 0 0 0 0 155.42h80.642z"/><path fill="#ffba00" d="m215.242 77.71l-37.243-64.514c-2.345-4.106-5.718-7.331-9.677-9.677l-40.32 69.792l47.358 82.109h80.496c0-4.546-1.173-9.09-3.519-13.196z"/></svg>
             </div>
-            <span>open resume in google drive</span>
+            <span>فتح في google drive</span>
           </a>
         </div>
       </div>
     </div>
     <div id="contactme-section">
-      <h1 id="contactme-title" class="section-title">Get in touch</h1>
+      <h1 id="contactme-title" class="section-title">تواصل معي</h1>
       <div class="contacts">
         <h3 class="c-title" style="--order:1">Email</h3>
         <p id="email" class="contact" style="--order:1" href="">omar.hasan.im@gmail.com</p>
-        <button id="copy-email" class="copy-link-btn" style="--order:1">copy</button>
+        <button id="copy-email" class="copy-link-btn" style="--order:1">نسخ</button>
         <h3 class="c-title" style="--order:2">Linkedin</h3>
         <p id="linkedin" class="contact" style="--order:2" href="">linkedin.com/in/omar-hasan-im</p>
-        <a href="https://www.linkedin.com/in/omar-hasan-im/" target="_blank" id="copy-linkedin" class="copy-link-btn" style="--order:2">open</a>
+        <a href="https://www.linkedin.com/in/omar-hasan-im/" target="_blank" id="copy-linkedin" class="copy-link-btn" style="--order:2">فتح</a>
         <h3 class="c-title" style="--order:3">Github</h3>
         <p id="github" class="contact" style="--order:3" href="">github.com/OmarHasan7</p>
-        <a href="https://github.com/OmarHasan7" target="_blank" id="copy-github" class="copy-link-btn" style="--order:3">open</a>
+        <a href="https://github.com/OmarHasan7" target="_blank" id="copy-github" class="copy-link-btn" style="--order:3">فتح</a>
       </div>
     </div>
     <footer>
-      OH portfolio version <span>1.0</span>
+      portfolio نسخة <span>1.0</span>
     </footer>
-    <div id="toast"><div id="desc">email copied</div></div>
+    <div id="toast"><div id="desc">تم النسخ</div></div>
   </body>
 </html>
