@@ -669,8 +669,8 @@ body {
   display: none;
 }
 .aboutme-button {
-  min-width: max-content;
-  width: 7rem;
+  /* min-width: max-content; */
+  width: max-content;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--aboutme--txt);
@@ -678,7 +678,7 @@ body {
 .btn-border-buttom {
   border-bottom: 3px;
   border-style: solid;
-  border-image: linear-gradient(to right, #644400 20%, #CA8900 50%) 40 fill;
+  border-image: linear-gradient(to right, #644400 20%, #CA8900 50%) 25 fill;
 }
 #resume-btn {
   width: max-content;
@@ -886,7 +886,7 @@ footer {
     padding-left: 0;
   }
   #project > .img {
-    width: 99%;
+    width: 95%;
     height: auto;
     aspect-ratio:  43.9 / 27;
     margin-top: 1rem;
