@@ -38,8 +38,24 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --pale-gradient-clr: #CA8900;
-    --saturated-gradient-clr: #644400;  
-  }
+    --saturated-gradient-clr: #644400;
+    --burger-nav-pale-gradient: rgba(202, 137, 0, 1);
+    --burger-nav-saturated-gradient: rgba(100, 68, 0, 1);
+    --slide-nav-pale-gradient: rgba(202, 137, 0, 1);
+    --slide-nav-saturated-gradient: rgba(100, 68, 0, 1);
+    --buger-btn-clr: #fff;
+  
+    --nav-txt-clr: #fff;
+    --icon-fill-clr: white;
+    --lang-btn-clr: #fff;
+    --lang-btn-txt: #644400;
+    --hero-txt: #fff;
+    --icons-border-clr: #fff;
+    --icons-background-clr: #C6CFDA;
+    --description-background-clr: #312C2C;
+    --aboutme-txt: #fff;
+    --resumelink-background: #000;
+    }
 }
 
 .dark-theme {
